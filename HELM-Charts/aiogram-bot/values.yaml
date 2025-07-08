@@ -1,0 +1,29 @@
+replicaCount: 1
+imagebot:
+  repository: djabjo/telegram-bot
+  tag: 0.1.0
+  pullPolicy: Always
+
+
+bot:
+  SecretTOKEN: "aiogram-bot-secret"
+  SecretPSQL: "postgresql-db"
+
+resources:
+  limits:
+    memory: "524Mi"
+    cpu: "200m"
+  requests:
+    memory: "256Mi"
+    cpu: "100m"
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 2
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
