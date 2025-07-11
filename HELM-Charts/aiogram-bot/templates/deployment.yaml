@@ -34,7 +34,7 @@ spec:
                   name: {{ .Values.bot.SecretPSQL }} 
                   key: DB_USER
       nodeSelector:
-        node-role: worker
+        node-role: worker2
 {{- with .Values.nodeSelector }}
 nodeSelector:
   {{- toYaml . | nindent 4 }}
